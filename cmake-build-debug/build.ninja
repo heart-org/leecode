@@ -109,6 +109,40 @@ build 11.exe: CXX_EXECUTABLE_LINKER__11_Debug CMakeFiles/11.dir/11.cpp.obj
   TARGET_PDB = 11.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target 115
+
+
+#############################################
+# Order-only phony target for 115
+
+build cmake_object_order_depends_target_115: phony || CMakeFiles/115.dir
+
+build CMakeFiles/115.dir/115.cpp.obj: CXX_COMPILER__115_unscanned_Debug D$:/cpp/leecode/115.cpp || cmake_object_order_depends_target_115
+  DEP_FILE = CMakeFiles\115.dir\115.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/cpp/leecode/cmake-build-debug
+  OBJECT_DIR = CMakeFiles\115.dir
+  OBJECT_FILE_DIR = CMakeFiles\115.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 115
+
+
+#############################################
+# Link the executable 115.exe
+
+build 115.exe: CXX_EXECUTABLE_LINKER__115_Debug CMakeFiles/115.dir/115.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\115.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 115.exe
+  TARGET_IMPLIB = lib115.dll.a
+  TARGET_PDB = 115.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target 125
 
 
@@ -784,6 +818,8 @@ build 09: phony 09.exe
 
 build 11: phony 11.exe
 
+build 115: phony 115.exe
+
 build 125: phony 125.exe
 
 build 128: phony 128.exe
@@ -830,7 +866,7 @@ build datastructure: phony datastructure.exe
 #############################################
 # Folder: D:/cpp/leecode/cmake-build-debug
 
-build all: phony 09.exe 11.exe 125.exe 128.exe 15.exe 167.exe 1929.exe 20.exe 217.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 704.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
+build all: phony 09.exe 11.exe 115.exe 125.exe 128.exe 15.exe 167.exe 1929.exe 20.exe 217.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 704.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
 
 # =============================================================================
 # Built-in targets
