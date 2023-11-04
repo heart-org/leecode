@@ -75,6 +75,40 @@ build 09.exe: CXX_EXECUTABLE_LINKER__09_Debug CMakeFiles/09.dir/09.cpp.obj
   TARGET_PDB = 09.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target 1047
+
+
+#############################################
+# Order-only phony target for 1047
+
+build cmake_object_order_depends_target_1047: phony || CMakeFiles/1047.dir
+
+build CMakeFiles/1047.dir/1047.cpp.obj: CXX_COMPILER__1047_unscanned_Debug D$:/cpp/leecode/1047.cpp || cmake_object_order_depends_target_1047
+  DEP_FILE = CMakeFiles\1047.dir\1047.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/cpp/leecode/cmake-build-debug
+  OBJECT_DIR = CMakeFiles\1047.dir
+  OBJECT_FILE_DIR = CMakeFiles\1047.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 1047
+
+
+#############################################
+# Link the executable 1047.exe
+
+build 1047.exe: CXX_EXECUTABLE_LINKER__1047_Debug CMakeFiles/1047.dir/1047.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\1047.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 1047.exe
+  TARGET_IMPLIB = lib1047.dll.a
+  TARGET_PDB = 1047.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target 11
 
 
@@ -243,6 +277,40 @@ build 15.exe: CXX_EXECUTABLE_LINKER__15_Debug CMakeFiles/15.dir/15.cpp.obj
   TARGET_FILE = 15.exe
   TARGET_IMPLIB = lib15.dll.a
   TARGET_PDB = 15.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 150
+
+
+#############################################
+# Order-only phony target for 150
+
+build cmake_object_order_depends_target_150: phony || CMakeFiles/150.dir
+
+build CMakeFiles/150.dir/150.cpp.obj: CXX_COMPILER__150_unscanned_Debug D$:/cpp/leecode/150.cpp || cmake_object_order_depends_target_150
+  DEP_FILE = CMakeFiles\150.dir\150.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/cpp/leecode/cmake-build-debug
+  OBJECT_DIR = CMakeFiles\150.dir
+  OBJECT_FILE_DIR = CMakeFiles\150.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 150
+
+
+#############################################
+# Link the executable 150.exe
+
+build 150.exe: CXX_EXECUTABLE_LINKER__150_Debug CMakeFiles/150.dir/150.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\150.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 150.exe
+  TARGET_IMPLIB = lib150.dll.a
+  TARGET_PDB = 150.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 167
@@ -850,6 +918,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build 09: phony 09.exe
 
+build 1047: phony 1047.exe
+
 build 11: phony 11.exe
 
 build 115: phony 115.exe
@@ -859,6 +929,8 @@ build 125: phony 125.exe
 build 128: phony 128.exe
 
 build 15: phony 15.exe
+
+build 150: phony 150.exe
 
 build 167: phony 167.exe
 
@@ -902,7 +974,7 @@ build datastructure: phony datastructure.exe
 #############################################
 # Folder: D:/cpp/leecode/cmake-build-debug
 
-build all: phony 09.exe 11.exe 115.exe 125.exe 128.exe 15.exe 167.exe 1929.exe 20.exe 217.exe 232.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 704.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
+build all: phony 09.exe 1047.exe 11.exe 115.exe 125.exe 128.exe 15.exe 150.exe 167.exe 1929.exe 20.exe 217.exe 232.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 704.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
 
 # =============================================================================
 # Built-in targets
