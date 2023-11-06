@@ -15,8 +15,7 @@
 
 using namespace std;
 
-
-void backTracking(int n, int left, int right,vector<string> &res, string str){
+ void backTracking(int n, int left, int right,vector<string> &res, string str){
     if (right > left)
         return;
     if (right == n && left == n)
@@ -41,7 +40,7 @@ public:
         vector<string> res;
         string str = "";
         backTracking(n,left,right,res,str);
-        
+
         return res;
     }
         
