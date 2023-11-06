@@ -449,6 +449,40 @@ build 217.exe: CXX_EXECUTABLE_LINKER__217_Debug CMakeFiles/217.dir/217.cpp.obj
   TARGET_PDB = 217.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target 22
+
+
+#############################################
+# Order-only phony target for 22
+
+build cmake_object_order_depends_target_22: phony || CMakeFiles/22.dir
+
+build CMakeFiles/22.dir/22.cpp.obj: CXX_COMPILER__22_unscanned_Debug D$:/cpp/leecode/22.cpp || cmake_object_order_depends_target_22
+  DEP_FILE = CMakeFiles\22.dir\22.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/cpp/leecode/cmake-build-debug
+  OBJECT_DIR = CMakeFiles\22.dir
+  OBJECT_FILE_DIR = CMakeFiles\22.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 22
+
+
+#############################################
+# Link the executable 22.exe
+
+build 22.exe: CXX_EXECUTABLE_LINKER__22_Debug CMakeFiles/22.dir/22.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\22.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 22.exe
+  TARGET_IMPLIB = lib22.dll.a
+  TARGET_PDB = 22.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target 232
 
 
@@ -940,6 +974,8 @@ build 20: phony 20.exe
 
 build 217: phony 217.exe
 
+build 22: phony 22.exe
+
 build 232: phony 232.exe
 
 build 238: phony 238.exe
@@ -974,7 +1010,7 @@ build datastructure: phony datastructure.exe
 #############################################
 # Folder: D:/cpp/leecode/cmake-build-debug
 
-build all: phony 09.exe 1047.exe 11.exe 115.exe 125.exe 128.exe 15.exe 150.exe 167.exe 1929.exe 20.exe 217.exe 232.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 704.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
+build all: phony 09.exe 1047.exe 11.exe 115.exe 125.exe 128.exe 15.exe 150.exe 167.exe 1929.exe 20.exe 217.exe 22.exe 232.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 704.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
 
 # =============================================================================
 # Built-in targets
