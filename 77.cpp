@@ -41,6 +41,8 @@ public:
 
 
 int main(){
+    Solution s;
+    s.combine(4, 2);
 
     return 0;
 }

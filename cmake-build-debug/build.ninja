@@ -789,6 +789,40 @@ build 49.exe: CXX_EXECUTABLE_LINKER__49_Debug CMakeFiles/49.dir/49.cpp.obj
   TARGET_PDB = 49.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target 496
+
+
+#############################################
+# Order-only phony target for 496
+
+build cmake_object_order_depends_target_496: phony || CMakeFiles/496.dir
+
+build CMakeFiles/496.dir/496.cpp.obj: CXX_COMPILER__496_unscanned_Debug D$:/cpp/leecode/496.cpp || cmake_object_order_depends_target_496
+  DEP_FILE = CMakeFiles\496.dir\496.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/cpp/leecode/cmake-build-debug
+  OBJECT_DIR = CMakeFiles\496.dir
+  OBJECT_FILE_DIR = CMakeFiles\496.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 496
+
+
+#############################################
+# Link the executable 496.exe
+
+build 496.exe: CXX_EXECUTABLE_LINKER__496_Debug CMakeFiles/496.dir/496.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\496.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 496.exe
+  TARGET_IMPLIB = lib496.dll.a
+  TARGET_PDB = 496.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target 704
 
 
@@ -821,6 +855,40 @@ build 704.exe: CXX_EXECUTABLE_LINKER__704_Debug CMakeFiles/704.dir/704.cpp.obj
   TARGET_FILE = 704.exe
   TARGET_IMPLIB = lib704.dll.a
   TARGET_PDB = 704.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 739
+
+
+#############################################
+# Order-only phony target for 739
+
+build cmake_object_order_depends_target_739: phony || CMakeFiles/739.dir
+
+build CMakeFiles/739.dir/739.cpp.obj: CXX_COMPILER__739_unscanned_Debug D$:/cpp/leecode/739.cpp || cmake_object_order_depends_target_739
+  DEP_FILE = CMakeFiles\739.dir\739.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/cpp/leecode/cmake-build-debug
+  OBJECT_DIR = CMakeFiles\739.dir
+  OBJECT_FILE_DIR = CMakeFiles\739.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 739
+
+
+#############################################
+# Link the executable 739.exe
+
+build 739.exe: CXX_EXECUTABLE_LINKER__739_Debug CMakeFiles/739.dir/739.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\739.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 739.exe
+  TARGET_IMPLIB = lib739.dll.a
+  TARGET_PDB = 739.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 77
@@ -1028,7 +1096,11 @@ build 42: phony 42.exe
 
 build 49: phony 49.exe
 
+build 496: phony 496.exe
+
 build 704: phony 704.exe
+
+build 739: phony 739.exe
 
 build 77: phony 77.exe
 
@@ -1046,7 +1118,7 @@ build datastructure: phony datastructure.exe
 #############################################
 # Folder: D:/cpp/leecode/cmake-build-debug
 
-build all: phony 09.exe 1047.exe 11.exe 115.exe 125.exe 128.exe 15.exe 150.exe 167.exe 1929.exe 20.exe 217.exe 22.exe 232.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 704.exe 77.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
+build all: phony 09.exe 1047.exe 11.exe 115.exe 125.exe 128.exe 15.exe 150.exe 167.exe 1929.exe 20.exe 217.exe 22.exe 232.exe 238.exe 242.exe 27.exe 271.exe 347.exe 36.exe 42.exe 49.exe 496.exe 704.exe 739.exe 77.exe CMakeCXXCompilerId.exe datastructure.exe CMakeCCompilerId.exe
 
 # =============================================================================
 # Built-in targets
