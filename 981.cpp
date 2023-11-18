@@ -43,9 +43,14 @@ public:
 };
 
 int main(){
-    map<int, int> m;
-    m.insert({1, 1});
-    cout << m[1] << endl;
+    TimeMap t;
+    t.set("foo", "bar", 1);
+    t.get("foo", 1);
+    t.get("foo", 3);
+    t.set("foo", "bar2", 4);
+    t.get("foo", 4);
+    t.get("foo", 5);
+
 
 
     return 0;
