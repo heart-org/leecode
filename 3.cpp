@@ -48,6 +48,7 @@ public:
     }
 };
 
+
 int main(){
     string s = " ";
     Solution leng;
