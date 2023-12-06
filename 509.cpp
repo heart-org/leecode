@@ -55,7 +55,7 @@ public:
         vector<int> dp(3);
         dp[0] = 0;
         dp[1] = 1;
-        int res = dp[0] + dp[1];
+        int res = 1;
         for (int i = 2; i <= n; ++i) {
             res = dp[0] + dp[1];
             dp[0] = dp[1];
