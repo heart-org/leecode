@@ -62,7 +62,7 @@ public:
             }
             sum = min(sum, fast - slow);
         }
-
+        return sum;
 
     }
 };
