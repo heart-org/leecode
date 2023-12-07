@@ -34,7 +34,7 @@ public:
 
 int main(){
     vector<int> height = {1,8,6,2,5,4,8,3,7};
-    Solution().maxArea(height);
+    cout << Solution().maxArea(height);
 
     return 0;
 }
