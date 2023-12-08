@@ -27,6 +27,8 @@ bool judge(vector<int> vec1, vector<int> vec2) {
 class Solution {
 public:
     string minWindow(string s, string t) {
+        if (t.length() > s.length())
+            return "";
         vector<int> vec1(58);
         vector<int> vec2(58);
         for (int i = 0; i < t.length(); ++i) {
@@ -37,23 +39,39 @@ public:
         slow = start = 0;
         fast = t.length();
         int min_num = INT_MAX;
-        while (fast < s.length()) {
+        if (s.length() == t.length()) {
+            if (judge(vec1, vec2))
+                return s;
+            else
+                return "";
+        }
+        while (fast <= s.length()) {
             if (!judge(vec1, vec2)) {
 
             } else {
+                if (min_num > (fast - slow)) {
+                    min_num = fast - slow;
+                    start = slow;
+                }
                 vec1[s[slow++] - 'A']--;
                 while (judge(vec1, vec2)) {
-                    if (min_num < (fast - slow)) {
+                    if (min_num > (fast - slow)) {
                         min_num = fast - slow;
                         start = slow;
-                    } else {
-                        vec1[s[slow++] - 'A']--;
                     }
+                    vec1[s[slow++] - 'A']--;
                 }
             }
-            vec1[s[fast++] - 'A']++;
+            if (fast < s.length()) {
+                vec1[s[fast++] - 'A']++;
+            } else
+                fast++;
         }
-        return s.substr(start, min_num);
+        if (min_num != INT_MAX) {
+            string res = s.substr(start, min_num);
+            return res;
+        }
+        return "";
     }
 };
 
