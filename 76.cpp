@@ -39,16 +39,8 @@ public:
         slow = start = 0;
         fast = t.length();
         int min_num = INT_MAX;
-        if (s.length() == t.length()) {
-            if (judge(vec1, vec2))
-                return s;
-            else
-                return "";
-        }
         while (fast <= s.length()) {
-            if (!judge(vec1, vec2)) {
-
-            } else {
+            if (judge(vec1, vec2)) {
                 if (min_num > (fast - slow)) {
                     min_num = fast - slow;
                     start = slow;
