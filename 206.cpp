@@ -28,6 +28,26 @@ struct ListNode {
 };
 
 
+class Solution {
+public:
+    ListNode *reverseList(ListNode *head) {
+        ListNode *p = new ListNode(0, head);
+        ListNode *s = new ListNode(0, head);
+        stack<int> st;
+        s = p;
+        while (s->next != nullptr) {
+            st.push(s->next->val);
+            s = s->next;
+        }
+        while (!st.empty()) {
+            p->next->val = st.top();
+            st.pop();
+            p = p->next;
+        }
+        return head;
+    }
+};
+
 /*
 class Solution {
 public:
@@ -45,27 +65,6 @@ public:
 };
 
  */
-
-class Solution {
-public:
-    ListNode *reverse(ListNode *pre, ListNode *cur) {
-        if (cur == NULL) return pre;
-        ListNode *temp = cur->next;
-        cur->next = pre;
-        // 可以和双指针法的代码进行对比，如下递归的写法，其实就是做了这两步
-        // pre = cur;
-        // cur = temp;
-        return reverse(cur, temp);
-    }
-
-    ListNode *reverseList(ListNode *head) {
-        // 和双指针法初始化是一样的逻辑
-        // ListNode* cur = head;
-        // ListNode* pre = NULL;
-        return reverse(NULL, head);
-    }
-
-};
 
 /*
 class Solution {
