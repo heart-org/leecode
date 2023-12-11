@@ -94,7 +94,7 @@ public:
 int main() {
     Solution s;
     ListNode *head = new ListNode(1);
-    ListNode *head1 = new ListNode(2);
+    ListNode *head1 = (1, head);
     ListNode *head2 = new ListNode(3);
     ListNode *head3 = new ListNode(4);
     //ListNode * head4 = new ListNode(5);
