@@ -27,11 +27,10 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {};
 };
 
-
-void move(queue<int> s, ListNode *cur, int &flag) {
+void move_last(queue<int> s, ListNode *(*cur), int &flag, vector<int> &vec) {
     ListNode *tmp = new ListNode(0);
-    cur->next = tmp;
-    cur = cur->next;
+    (*cur)->next = tmp;
+    (*cur) = (*cur)->next;
     int sum = 0;
     while (s.size()) {
         sum = s.front() + flag;
@@ -40,14 +39,15 @@ void move(queue<int> s, ListNode *cur, int &flag) {
             flag = 1;
         else
             flag = 0;
-        cur->val = sum % 10;
+        (*cur)->val = sum % 10;
+        vec.push_back((*cur)->val);
         if (s.size() > 0) {
-            if (cur->next == nullptr) {
+            if ((*cur)->next == nullptr) {
                 ListNode *tmp = new ListNode(0);
-                cur->next = tmp;
-                cur = cur->next;
+                (*cur)->next = tmp;
+                (*cur) = (*cur)->next;
             } else
-                cur = cur->next;
+                (*cur) = (*cur)->next;
         }
     }
 }
@@ -55,12 +55,13 @@ void move(queue<int> s, ListNode *cur, int &flag) {
 
 class Solution {
 public:
-    //friend void move(queue<int> s, ListNode *cur, int &flag);
+    //friend void move(queue<int> s, ListNode (*cur), int &flag);
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
         ListNode *head1 = l1;
         ListNode *head2 = l2;
         queue<int> s1;
         queue<int> s2;
+        vector<int> vec;
         while (head1 != nullptr) {
             s1.push(head1->val);
             head1 = head1->next;
@@ -70,7 +71,7 @@ public:
             head2 = head2->next;
         }
         ListNode *head = s1.size() < s2.size() ? l1 : l2;
-        ListNode *cur = head;
+        ListNode (*cur) = head;
         int flag = 0;
         int sum = 0;
         int check = s1.size() <= s2.size() ? s1.size() : s2.size();
@@ -84,16 +85,18 @@ public:
             else
                 flag = 0;
             cur->val = sum % 10;
+            vec.push_back(cur->val);
             if (check > 0)
                 cur = cur->next;
         }
         if (!s1.empty()) {
-            move(s1, cur, flag);
+            move_last(s1, &cur, flag, vec);
         } else if (!s2.empty()) {
-            move(s2, cur, flag);
+            move_last(s2, &cur, flag, vec);
         }
         if (flag != 0) {
             ListNode *tmp = new ListNode(1);
+            vec.push_back(1);
             cur->next = tmp;
         }
         return head;
