@@ -28,52 +28,33 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-using vecType = vector<int>;
-
 class Solution {
 public:
-    bool isSameTree(TreeNode *p, TreeNode *q) {
-        preOrder(p, v1);
-        preOrder(q, v2);
-        if (v1 == v2)
+    bool isSubtree(TreeNode *root, TreeNode *subRoot) {
+        if (root == nullptr && subRoot == nullptr)
             return true;
-        return false;
+        else if (root == nullptr || subRoot == nullptr)
+            return false;
+        return (check(root, subRoot) || isSubtree(root->left, subRoot) || isSubtree(root->right, subRoot));
     }
 
 private:
-    vecType v1;
-    vecType v2;
-
-    void preOrder(TreeNode *Node, vecType &vec) {
-        if (Node == nullptr) {
-            vec.emplace_back(INT_MAX);
-            return;
-        }
-        vec.emplace_back(Node->val);
-        preOrder(Node->left, vec);
-        preOrder(Node->right, vec);
-    }
-};
-
-class leetCode {
-public:
-    bool isSameTree(TreeNode *p, TreeNode *q) {
-        if (p == nullptr && q == nullptr) {
+    bool check(TreeNode *Node, TreeNode *subNode) {
+        if (Node == nullptr && subNode == nullptr)
             return true;
-        } else if (p == nullptr || q == nullptr) {
+        else if (Node == nullptr || subNode == nullptr)
             return false;
-        } else if (p->val != q->val) {
+        else if (Node->val != subNode->val)
             return false;
-        } else {
-            return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
+        else {
+            return (check(Node->left, subNode->left) && check(Node->right, subNode->right));
         }
     }
 };
 
 
 int main() {
-
+    Solution s;
 
     return 0;
 }
-
