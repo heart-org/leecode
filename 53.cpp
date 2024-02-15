@@ -19,14 +19,20 @@ using namespace std;
 class Solution {
 public:
     int maxSubArray(vector<int> &nums) {
-        int res = 0;
-        for (int i = 0; i < nums.size() - 1; ++i) {
+        int result = INT_MIN;
+        int cur = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            cur += nums[i];
+            result = max(cur, result);
+            if (cur < 0)
+                cur = 0;
         }
-
+        return result;
     }
 };
 
 int main() {
+    Solution s;
 
     return 0;
 }
