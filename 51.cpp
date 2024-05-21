@@ -43,8 +43,8 @@ private:
         }
     }
 
-    //每次选择当前row的一个位置进行插入来判断，所以不需要判断当前行是否有重复的元素
     bool isValid(vecStrContainer &chessboard, int row, int col, int n) {
+        //每次选择当前row的一个位置进行插入来判断，所以不需要判断当前行是否有重复的元素
         //检查列
         for (int i = 0; i < row; ++i) {
             if (chessboard[i][col] == 'Q')

@@ -23,6 +23,25 @@ public:
     }
 };
 
+class Search {
+public:
+    int search(vector<int> &nums, int target) {
+        int left = 0;
+        int right = nums.size() - 1;
+        int cur;
+        while (left <= right) {
+            cur = left + (right - left) / 2;
+            if (target > nums[cur])
+                left = cur + 1;
+            else if (target < nums[cur])
+                right = cur - 1;
+            else
+                return cur;
+        }
+        return -1;
+    }
+};
+
 int main()
 {
     vector<int> nums = {-1, 0, 3, 5, 9, 12};

@@ -13,15 +13,15 @@
 #include "array"
 #include "cctype"
 #include "list"
+#include "chrono"
 
 using namespace std;
 
-class Solution {
-public:
-
-};
-
 int main() {
+    auto time = chrono::system_clock::now();
+    std::time_t now_time = chrono::system_clock::to_time_t(time);
+    cout << std::ctime(&now_time) << endl;
+
 
     return 0;
 }

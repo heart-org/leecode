@@ -16,12 +16,18 @@
 
 using namespace std;
 
+using vecStrContainer = vector<string>;
+
 class Solution {
 public:
+    vector<string> findItinerary(vector<vector<string>> &tickets) {
 
+
+    }
 };
 
 int main() {
+    Solution s;
 
     return 0;
 }

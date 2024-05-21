@@ -30,7 +30,6 @@ public:
 private:
     vecContainer res;
     vector<vecContainer> result;
-
     void backTracking(vecContainer &nums, vector<bool> &used) {
         if (res.size() == nums.size()) {
             result.push_back(res);

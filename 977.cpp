@@ -14,23 +14,21 @@
 #include "cctype"
 #include "list"
 
-template<typename T>
-class animal {
+using namespace std;
+
+class Solution {
 public:
-    animal() = default;
-
-    animal(T *data) : m_data(data) {}
-
-    ~animal() {
-
-
+    vector<int> sortedSquares(vector<int> &nums) {
+        for (int i = 0; i < nums.size(); ++i) {
+            nums[i] *= nums[i];
+        }
+        sort(nums.begin(), nums.end(), [](int a, int b) { return a > b; });
+        return nums;
     }
-
-private:
-    int m_data;
 };
 
 int main() {
+    Solution s;
 
 
     return 0;
