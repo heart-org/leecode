@@ -15,6 +15,38 @@
 
 using namespace std;
 
+/*
+class Solution {
+public:
+    int evalRPN(vector<string>& tokens) {
+        stack<int> nums;
+        for (int i = 0; i < tokens.size(); ++i) {
+            if (tokens[i] == "+" || tokens[i] == "-" || tokens[i] == "*" || tokens[i] == "/"){
+                if (nums.size() < 2){
+                    return false;
+                }else{
+                    int tmp1 = nums.top();
+                    nums.pop();
+                    int tmp2 = nums.top();
+                    nums.pop();
+                    if (tokens[i] == "+"){
+                        nums.push(tmp2 + tmp1);
+                    }else if (tokens[i] == "-"){
+                        nums.push(tmp2 - tmp1);
+                    }else if(tokens[i] == "*"){
+                        nums.push(tmp2 * tmp1);
+                    }else{
+                        nums.push(tmp2 / tmp1);
+                    }
+                }
+            }else
+                nums.push(stoi(tokens[i]));
+        }
+        return nums.top();
+    }
+};
+*/
+
 class Solution {
 public:
     int evalRPN(vector<string>& tokens) {

@@ -17,16 +17,6 @@
 using namespace std;
 
 using vecContainer = vector<int>;
-struct ListNode {
-    int val;
-    ListNode *next;
-
-    ListNode() : val(0), next(nullptr) {}
-
-    ListNode(int val) : val(val), next(nullptr) {}
-
-    ListNode(int val, ListNode *next) : val(val), next(next) {}
-};
 
 struct TreeNode {
     int val;
@@ -40,17 +30,9 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-void traversal(TreeNode *cur, vecContainer &vec) {
-    if (cur == nullptr)
-        return;
-    vec.emplace_back(cur->val);
-    traversal(cur->left, vec);
-    traversal(cur->right, vec);
-}
-
 class Solution {
 public:
-    vector<vector<int>> levelOrder(TreeNode *root) {
+    vector<vector<int>> levelOrderBottom(TreeNode *root) {
         vector<vecContainer> res;
         if (root == nullptr)
             return res;
@@ -69,13 +51,13 @@ public:
             }
             res.emplace_back(vec);
         }
+        reverse(res.begin(), res.end());
         return res;
     }
 };
 
 int main() {
     Solution s;
-
 
     return 0;
 }

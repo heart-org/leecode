@@ -18,6 +18,25 @@ using namespace std;
 
 class Solution {
 public:
+    vector<int> twoSum(vector<int> &nums, int target) {
+        multimap<int, int> map;
+        vector<int> res;
+        for (int i = 0; i < nums.size(); ++i) {
+            auto iter = map.find(target - nums[i]);
+            if (iter != map.end()) {
+                res.emplace_back(iter->second);
+                res.emplace_back(i);
+                return res;
+            }
+            map.insert({nums[i], i});
+        }
+        return res;
+    }
+};
+
+/*
+class Solution {
+public:
     vector<int> twoSum(vector<int>& nums, int target) {
         multimap<int, int> m;
         vector<int> res;
@@ -43,6 +62,7 @@ public:
         }
     }
 };
+*/
 
 /*
 class Solution {
@@ -70,6 +90,28 @@ public:
                 r_it++;
             } else
                 l_it++;
+        }
+        return res;
+    }
+};
+*/
+
+/*
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int slow = 0;
+        vector<int> res;
+        int size = nums.size();
+        while(slow < (size - 1)){
+            for (int fast = slow + 1; fast < size; ++fast) {
+                if (nums[slow] + nums[fast] == target){
+                    res.emplace_back(slow);
+                    res.emplace_back(fast);
+                    return res;
+                }
+            }
+            slow++;
         }
         return res;
     }

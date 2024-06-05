@@ -16,18 +16,6 @@
 
 using namespace std;
 
-using vecContainer = vector<int>;
-struct ListNode {
-    int val;
-    ListNode *next;
-
-    ListNode() : val(0), next(nullptr) {}
-
-    ListNode(int val) : val(val), next(nullptr) {}
-
-    ListNode(int val, ListNode *next) : val(val), next(next) {}
-};
-
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -40,34 +28,27 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-void traversal(TreeNode *cur, vecContainer &vec) {
-    if (cur == nullptr)
-        return;
-    vec.emplace_back(cur->val);
-    traversal(cur->left, vec);
-    traversal(cur->right, vec);
-}
+using vecContainer = vector<double>;
 
 class Solution {
 public:
-    vector<vector<int>> levelOrder(TreeNode *root) {
-        vector<vecContainer> res;
-        if (root == nullptr)
-            return res;
+    vector<double> averageOfLevels(TreeNode *root) {
+        vecContainer res;
         queue<TreeNode *> que1;
         que1.push(root);
         while (!que1.empty()) {
             int size = que1.size();
-            vecContainer vec;
+            double num1 = 0;
+            int num2 = size;
             while (size--) {
                 if (que1.front()->left)
                     que1.push(que1.front()->left);
                 if (que1.front()->right)
                     que1.push(que1.front()->right);
-                vec.emplace_back(que1.front()->val);
+                num1 += que1.front()->val;
                 que1.pop();
             }
-            res.emplace_back(vec);
+            res.emplace_back(num1 / num2);
         }
         return res;
     }
@@ -75,7 +56,6 @@ public:
 
 int main() {
     Solution s;
-
 
     return 0;
 }
