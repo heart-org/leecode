@@ -40,37 +40,37 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-void traversal(TreeNode *cur, vecContainer &vec) {
+void seq_traversal(TreeNode *cur, vecContainer &vec) {
     if (cur == nullptr)
         return;
     vec.emplace_back(cur->val);
-    traversal(cur->left, vec);
-    traversal(cur->right, vec);
+    seq_traversal(cur->left, vec);
+    seq_traversal(cur->right, vec);
 }
 
 class Solution {
 public:
-    vector<vector<int>> levelOrder(TreeNode *root) {
-        vector<vecContainer> res;
+    int findBottomLeftValue(TreeNode *root) {
+        queue<TreeNode *> que1;
         if (root == nullptr)
             return res;
-        queue<TreeNode *> que1;
         que1.push(root);
-        while (!que1.empty()) {
+        while (que1.size()) {
             int size = que1.size();
-            vecContainer vec;
+            res = que1.front()->val;
             while (size--) {
                 if (que1.front()->left)
                     que1.push(que1.front()->left);
                 if (que1.front()->right)
                     que1.push(que1.front()->right);
-                vec.emplace_back(que1.front()->val);
                 que1.pop();
             }
-            res.emplace_back(vec);
         }
         return res;
     }
+
+private:
+    int res = 0;
 };
 
 int main() {

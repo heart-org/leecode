@@ -28,6 +28,30 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+/*
+class Solution {
+public:
+    int getDepth(TreeNode * Node){
+        if (Node == nullptr)
+            return 0;
+        int left_depth = getDepth(Node->left);
+        int right_depth = getDepth(Node->right);
+        int cur_depth;
+        if (left_depth == 0 || right_depth == 0)
+            cur_depth = max(left_depth, right_depth) + 1;
+        else
+            cur_depth = min(left_depth, right_depth) + 1;
+        return cur_depth;
+    }
+
+    int minDepth(TreeNode* root) {
+        if (root == nullptr)
+            return 0;
+        return getDepth(root);
+    }
+};
+*/
+
 class Solution {
 public:
     int minDepth(TreeNode *root) {

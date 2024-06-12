@@ -31,6 +31,33 @@ struct TreeNode {
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode *root) {
+        if (root == nullptr)
+            return 0;
+        getSum(root);
+        return res;
+    }
+
+private:
+    int res = 0;
+
+    void getSum(TreeNode *Node) {
+        if (Node == nullptr)
+            return;
+        if (Node->left) {
+            if (Node->left->left == nullptr && Node->left->right == nullptr)
+                res += Node->left->val;
+            else
+                getSum(Node->left);
+        }
+        if (Node->right)
+            getSum(Node->right);
+    }
+};
+
+/*
+class Solution {
+public:
+    int sumOfLeftLeaves(TreeNode *root) {
         add_leaves(root);
         return sum;
     }
@@ -51,6 +78,7 @@ private:
 
     int sum = 0;
 };
+*/
 
 int main() {
     Solution s;

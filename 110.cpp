@@ -28,6 +28,25 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+
+class Solution {
+public:
+    int getDepth(TreeNode *Node) {
+        if (Node == nullptr)
+            return 0;
+        return 1 + max(getDepth(Node->left), getDepth(Node->right));
+    }
+
+    bool isBalanced(TreeNode *root) {
+        if (root == nullptr)
+            return true;
+        int leftDepth = getDepth(root->left);
+        int rightDepth = getDepth(root->right);
+        return (abs(leftDepth - rightDepth) <= 1) && isBalanced(root->left) && isBalanced(root->right);
+    }
+};
+
+/*
 class Solution {
 public:
     bool isBalanced(TreeNode *root) {
@@ -49,6 +68,7 @@ private:
         return (l_height >= r_height ? l_height : r_height) + 1;
     }
 };
+*/
 
 int main() {
     Solution s;

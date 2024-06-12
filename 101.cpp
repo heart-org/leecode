@@ -28,37 +28,28 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-/*
 class Solution {
 public:
-    int countNodes(TreeNode* root) {
-        if (root == nullptr)
-            return 0;
-        queue<TreeNode * > que1;
-        que1.push(root);
-        int res = 0;
-        while(!que1.empty()){
-            int size = que1.size();
-            res += size;
-            while(size--){
-                if(que1.front()->left)
-                    que1.push(que1.front()->left);
-                if(que1.front()->right)
-                    que1.push(que1.front()->right);
-                que1.pop();
-            }
-        }
-        return res;
-    }
-};
-*/
+    bool compare(TreeNode *left, TreeNode *right) {
+        if (left == nullptr && right != nullptr)
+            return false;
+        else if (left != nullptr && right == nullptr)
+            return false;
+        else if (left == nullptr && right == nullptr)
+            return true;
+        else if (left->val != right->val)
+            return false;
 
-class Solution {
-public:
-    int countNodes(TreeNode *root) {
+        bool leftCom = compare(left->left, right->right);
+        bool rightCom = compare(left->right, right->left);
+        bool isSame = leftCom && rightCom;
+        return isSame;
+    }
+
+    bool isSymmetric(TreeNode *root) {
         if (root == nullptr)
-            return 0;
-        return 1 + countNodes(root->left) + countNodes(root->right);
+            return true;
+        return compare(root->left, root->right);
     }
 };
 
